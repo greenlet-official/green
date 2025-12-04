@@ -1,0 +1,50 @@
+
+/* Shared styles for Greenlet demo */
+:root{
+  --bg:#203623;
+  --panel:#2f5330;
+  --muted:#6f8a6f;
+  --accent:#7ED957;
+  --dark:#162114;
+  --glass: rgba(255,255,255,0.03);
+  --text:#eaf7e7;
+  --card:#253b2a;
+}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;font-family:Inter, "Segoe UI", Roboto, Arial, sans-serif;background:
+linear-gradient(180deg, rgba(0,0,0,0.12) 0%, rgba(0,0,0,0.12) 100%), repeating-linear-gradient(45deg, rgba(0,0,0,0.03) 0 10px, transparent 10px 20px);
+color:var(--text);}
+
+/* layout */
+.app{display:flex;min-height:100vh}
+.sidebar{width:220px;background:linear-gradient(180deg,var(--panel), #243a26);padding:28px 18px;box-shadow:inset -6px 0 10px rgba(0,0,0,0.3)}
+.brand{font-weight:900;font-size:36px;letter-spacing:1px;color:var(--text);text-shadow:0 2px 8px rgba(0,0,0,0.6)}
+.menu{margin-top:18px}
+.menu a{display:flex;align-items:center;padding:10px 8px;border-radius:6px;color:var(--text);text-decoration:none;margin:6px 0;opacity:0.95}
+.menu a:hover{background:rgba(0,0,0,0.14)}
+.menu a .icon{width:30px; height:30px;border-radius:6px;background:linear-gradient(180deg,#38573b,#2b4b2d);display:inline-flex;align-items:center;justify-content:center;margin-right:10px;font-weight:700;color:var(--accent)}
+
+.content{flex:1;padding:28px}
+.header{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}
+.header .user{display:flex;align-items:center;gap:12px}
+.pill{background:var(--glass);padding:8px 12px;border-radius:8px;color:var(--text);font-weight:600}
+.page-title{font-size:48px;margin:6px 0 18px 0;color:var(--accent);text-shadow:0 2px 8px rgba(0,0,0,0.6)}
+
+/* cards / boxes */
+.panel{background:rgba(255,255,255,0.03);padding:18px;border-radius:10px;box-shadow:0 6px 14px rgba(0,0,0,0.4);margin-bottom:18px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.card{background:linear-gradient(180deg, rgba(0,0,0,0.15), rgba(0,0,0,0.06));padding:14px;border-radius:10px;display:flex;flex-direction:column;align-items:center;color:var(--text);min-height:140px}
+.card .title{margin-top:8px;font-weight:700;color:var(--accent)}
+.results{margin-top:20px;padding:18px;border-radius:10px;background:rgba(0,0,0,0.2)}
+
+/* utility */
+.center{display:flex;align-items:center;justify-content:center}
+.small{font-size:13px;color:var(--muted)}
+.search{width:300px;padding:10px;border-radius:8px;border:0;background:rgba(255,255,255,0.02);color:var(--text)}
+.footer{font-size:12px;color:var(--muted);margin-top:40px}
+
+/* responsive */
+@media(max-width:900px){
+  .grid{grid-template-columns:repeat(2,1fr)}
+  .sidebar{display:none}
+}
