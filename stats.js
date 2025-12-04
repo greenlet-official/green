@@ -1,16 +1,9 @@
 
-auth.onAuthStateChanged(async (user) => {
-  if (!user) return;
-
-  const docRef = db.collection("users").doc(user.uid);
-  const snap = await docRef.get();
-
-  if (snap.exists) {
-    const data = snap.data();
-    const count = data.greens
-      ? Object.values(data.greens).flat().length
-      : 0;
-
-    document.getElementById("greensCount").innerText = count;
-  }
+auth.onAuthStateChanged(async u=>{
+  if(!u) return;
+  const snap = await db.collection("users").doc(u.uid).get();
+  if(!snap.exists){ return; }
+  const data = snap.data().greens || {};
+  const n = Object.values(data).flat().length;
+  document.getElementById("count").innerText = n;
 });

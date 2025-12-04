@@ -1,5 +1,5 @@
 
-// Firebase initialization (replace with your config)
+// Replace with your Firebase project config:
 const firebaseConfig = {
   apiKey: "YOUR_API_KEY",
   authDomain: "YOUR_APP.firebaseapp.com",
@@ -10,10 +10,6 @@ const firebaseConfig = {
 };
 
 firebase.initializeApp(firebaseConfig);
-const db = firebase.firestore();
-const auth = firebase.auth();
 
-// Helper: get current user UID
-function uid() {
-  return auth.currentUser ? auth.currentUser.uid : null;
-}
+const auth = firebase.auth();
+const db = firebase.firestore();
